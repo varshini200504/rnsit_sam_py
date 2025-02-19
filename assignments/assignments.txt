@@ -10,6 +10,7 @@ Look for the next digit which is smaller than the current digit
 Mark the position of the smaller digit
 Swap digits ( ?? )
 Sort digits after the position in ?? order
-
+---------------------------------------------------
+5. 
 
 

@@ -15,7 +15,230 @@ Configuiration git commands:
 $ git config --global user.name "neelmyna" $ git config --global user.email "trainer_email@email.com"
 
 Credential Manager -> Windows Credentials -> github
+-----------------------------------------------------
+To check the current status of my Repo:
+$ git status
 
-$ 
+To Mark all the files that need to be updated in the server.
+$ git add .
 
+This command creates an object in tyhe local machine which consists of all the marked file.
+$ git commit -m "notes of the data science added"
+
+This command takes the object to the server (remote repo)
+$ git push origin main
+
+NOTE: Befor we do push, it is always safe to do pull.
+-------------------------------------------------------
+5 STEPS TO SOLVE A PROBLEM:
+
+1. Understand the probelm. Write down the i/p data in probelm statement. Write down the required or relevant information. Isolate the unwanted data and information. 
+
+2. Find solution in whats ever means you can. Trial and error method, applying specific algorithm, etc.
+
+3. Put down the solution in step by step procedure. Each step must be simple, finite and unambigious.
+
+4. Write the Fake code (pseudocode)
+
+5. Code it
+
+6. Test cases
+---------------------------------------------------
+p2. Check if a positive integer number is perfect square
+
+1.Read a number from user, say N
+2. Find root of the i/p number, say ROOT
+3. covert ROOT to int
+4. Multiply ROOT with itself and check if it is N
+	if yes: Declare N is PS
+	else: Declare N is not a PS
+
+read N
+ROOT = sqrt(N)
+ROOT = int(ROOT)
+if ROOT * ROOT == N then
+	print N is PS
+else
+	print N is not a PS
+
+36  6.0  6  36
+60  7.8  
+-----------------------------------------------
+DAY2 TUESDAY 18-02-2025
+
+range(10)
+
+[0, 10)
+[20, 30]
+range(20, 31)
+range(20, 40, 2)
+range(40, 30, 3)
+range(40, 30, -3)
+
+for i in range(10):
+	i += 2
+	print(i)
+	
+--------------------------------
+To know where python is installed:
+
+python -c "import sys; print(sys.executable)"
+------------------------------------------------------
+Data Structure:
+Storing and arranging data in memory in some particular way so as to achieve some efficiency.
+
+Array:
+Is a DS where elements are stored in continuous memory locations.
+Memory inefficient because, its size is fixed.
+Time efficient because to access (look up) any element is 1 unit of time.
+Simplest DS and easy to use with the help of subscript.
+Note: The DS to which we can apply subscript is called as Ordered DS.
+
+Linked List:
+Add the Points your selves
+
+------------------------------------------------
+Arithmatic Operators:
++ - * / // % **
+
+I/P are numbers
+O/P is number
+All are binary Operators
+Used with Infix notation
+All operators except ** operator have Left to Right Associtivity
+5 + 5.5
+Here the 5 is implicitly casted to float and then the addition is done.
+The precedence of + and - is less than the other.
+What is evaluated 1st is the operator having highest precedency.
+The infix notation expressions are 1st converted to postfix and then evaluated.
+-------------------------------------------
+Do we have a main function in Python ?
+Yes we have.
+The global code is implicitly put into __main__()
+-----------------------------------
+CERTIFICATIONS:
+
+Java exacm codes
+1Z0-811
+1Z0-829
+1z0-830
+
+oracle java certification
+pythoninstitute.org  (PCAP, PCEP, PCAD)
+
+For JS it is linuxfoundation
+
+CDAC
+nptel
+--------------------------------------------------
+Notations:
+Big-Oh
+
+1. Usually used to find worst case efficiency. However all 3 can also be found.
+2. Finds the efficiency on the i/p size (n)
+3. Its purpose if not to find the exact efficiency. Rather it is to find the ORDER in which the algorithm is.
+Eg: liner, quadratic, factorial, square root, logarthmic etc.
+4. It considers the i/p size 'n' to be very big. Thus it gives effiecncy for large data sets.
+5. Remove the constants from the efficiency to get only the order.
+
+Linear Search:
+Best Case Efficiency (BCE): O(1)
+WCE: O(n)
+ACE: O(n)
+
+BINARY SEARCH:
+Pre Requisite: The elements in the DS must be sorted.
+
+Number of elements as i/p: N
+
+Let us assume the number of iterations = X
+
+N     N/2     N/4   ........  8    4    2    1
+2(X-1)                       2(3)      2(1) 2(0)
+
+N = 2(X-1)
+N = 2(X)
+X = Log(N)
+
+WCE = O(Log(N))
+BCE = O(1)
+-----------------------------------------------
+Frame: A frame is memory allocated to a function during runtime.
+
+Special Purpose Registers:
+IR
+PC
+FP
+SP
+Accumalator
+
+Function Call Stack
+---------------------------------------------------
+Command Line Arguments
+
+Passing the data to the program from the command line.
+
+$ python p1.py
+
+$ python p1.py 10 20 30
+
+Here 10 20 30 are the command line Args.
+However, the script name itself (p1.py) is also sent as one of the argument, precisely as 1st Argument.
+
+All arguments are always passed as strings.
+These arguments are stored by the OS in memory in an array and the reference of the array is passed by the OS to the program which is copied into sys.argv
+--------------------------------------------------------
+Data types in MySQl:
+numbers:
+tinyint			byte
+smallint		short
+int				int
+bigint			long
+date
+
+varchar
+float
+
+Contraints:
+check
+default
+unique
+not null
+auto_increment
+primary key
+references
+
+
+person
+id			int				primary key		auto_increment
+name		varchar(64)		not null
+age			tinyint			
+location	bengaluru		
+gender		varchar(2)		check
+
+
+create table persons(id int primary key auto_increment, name varchar(32) not null, age tinyint, location varchar(32), gender check());
+
+create table persons(id int primary key auto_increment, name varchar(32) not null, age tinyint, location varchar(32), gender varchar(1) check()) auto_increment(101, 21);
+
+insert into persons(name, age, gender) values('nithin', 40, 'm');
+---------------------------------------------------------
+employees
+id			int				primary key auto_increment
+name		varchar(64)		not null
+technology	varchar(32)	
+designation	varchar(32)	
+salary		float			default(10000)
+commission	float		
+phone_num	bigint			unique
+date_of_joining datetime	default getdate()
+years_of_exp tinyint		not null
+
+
+SQL
+DDL		create, alter, drop, truncate
+DML		insert, delete, update
+TCL		savepoint, commit, rollback
+DRL		select
+DCL		grant, revoke
 

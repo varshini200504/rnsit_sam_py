@@ -15,8 +15,8 @@ def sum_of_odd_placed_even_digits(number):
                 sum2 += digit
         flip = not flip
     if flip:
-        return sum1
-    return sum2
+        return sum2
+    return sum1
 
 input_number = int(sys.argv[1])
 sum_of_digits = sum_of_odd_placed_even_digits(input_number)

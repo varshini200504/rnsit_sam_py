@@ -242,3 +242,87 @@ TCL		savepoint, commit, rollback
 DRL		select
 DCL		grant, revoke
 
+1. Print all the employee details whose salary is below 1 lakh.
+-> select * from employees where salary < 100000;
+
+2. List employee name and designation whose name starts with A.
+-> select name, designation from employees where name like 'a%'
+
+3. List name and phone number of the employees who haven't got the commission for this month.
+
+-> select name, phone_num from employees where commission = null;
+(check the cell value in the table with the value in the variable named null)
+
+-> select name, phone_num from employees where commission = 'null';
+(compare the cell value in the table with the value in the string literal (constant value) 'null')
+
+-> select name, phone_num from employees where commission is null;
+Checks if the cell value of commission in the row is empty.
+
+4. delete all rows from the table
+
+-> delete from employees;
+Deletes the data in the table (all rows), but the auto_increment data and the meta data persists.
+That is, the new row added later, would get the id which is continued value.
+
+-> truncate table employees;
+Deletes the data in the table (all rows) and also the auto_increment data.
+But the meta data persists.
+That is, the new row added later, would get the id value 1.
+
+-> drop table employees.
+Every thing is gone.
+
+CRUD Operations:
+C create (insert) One record
+R read/retrieve One tuple
+U update One row
+D delete One row
+List all rows
+
+insert into employees(name, technology, designation, salary, commission, phone_num, date_of_joining, years_of_exp) values ('nithin', 'python', 'trainer', 125000, 65000, 9480273090, '2025/01/01', 10);
+
+select * from employees where id = 1;
+
+update employees set salary = 145000 where id = 1;
+
+delete from employees where id = 5;
+
+select * from employees;
+-------------------------------------
+These are the most frequently used operations.
+In RestFul APIs, which uses the HTTP protocol.
+We perform these 5 operations using the VERBS:
+1. POST   for insert
+2. GET    for read/select (read all)
+3. PUT/PATCH for update (with id)
+4. DELETE for delete    (with id)
+5. GET with id for reading one
+
+members (id, name, wallet_bal, phone_num, dob, gender)
+
+games (id, name, price, min_count, max_count, duration, desc)
+
+recharges (id, amount, mem_id, date)
+mem_id
+
+transactions (id, mem_id, amount, game_id)
+mem_id
+
+collections (id, date, amount)
+--------------------------------------------------
+Connect to Mysql from Python
+And perform the operations on the DB
+
+hostname
+port number
+username
+password
+database
+charset
+---------------------------------------------------------------------
+DAY4 THURSDAY 20-02-2024
+
+Test-1 Link:
+https://docs.google.com/forms/d/1pPQDbuwFkYxa7QoPBVS4T_fRXadTZW0A48hR6SkMXMI/edit
+

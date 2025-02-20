@@ -326,3 +326,129 @@ DAY4 THURSDAY 20-02-2024
 Test-1 Link:
 https://docs.google.com/forms/d/1pPQDbuwFkYxa7QoPBVS4T_fRXadTZW0A48hR6SkMXMI/edit
 
+Insertion Sort: Optimistic Sort
+Technique is Decrease and Conquer
+
+Algorithm:
+How does it work
+Strategy
+Best and Worst case scenarios
+BCE and WCE
+Pseudocode and Implimentation
+Optimization
+Applications (Where to use and when not to use)
+
+from 2nd element to last element of unsorted array:
+	copy current element into element
+	j = index of element - 1
+	i = index of last element in sorted array
+	while j >= 0 and element < current element in sorted:
+		sorted_array[j+1] = sorted_array[j]
+		j--
+	sorted_array[j+1] = element
+	
+for i in range(1, len(array)):
+	j = i-1
+	element = array[i]
+	while j >= 0 and element < array[j]:
+		array[j+1] = array[j]
+		j--
+	array[j+1] = element
+
+numbers = [int(ele) for ele in input().split()]
+
+
+x = 10
+print(x)
+
+
+if(x >10)
+	do this
+do this
+
+if C1
+	do 1
+else
+	do 2
+
+1. Insertion sort to sort case insensitive strings
+2. Find sum of Odd placed Even digits in a number.
+
+23751
+---------------------------------------
+MERGE SORT
+
+12   5   3   2    9   7   13    4
+
+12   5   3   2           9    7    13    4
+
+
+12  5      3  2        9  7        13  4
+
+12     5      3      2      9      7      13      4
+
+5  12         2  3        7  9       4   13
+
+2  3  5  12          4  7  9  13
+         i	            		 j
+
+2  3   4   5   7   9   12   13
+                       k
+
+
+def merge_sort(numbers, low, high):
+	if low < high:
+		mid (low + (high - low) // 2)
+		//mid = (low + high) // 2
+		merge_sort(numbers, low, mid-1)
+		merge_sort(numbers, mid, high)
+		merge(numbers, low, mid, high)
+
+# while i < len(array1) and j < len(array2):
+	
+def merge(numbers, low, mid, high):
+	Copy 1st half of the array into array1
+	Copy 2nd half of the array into array2
+	
+	merged_array = []
+	k = 0
+	i = low
+	j = mid
+	while array1 and array2 has numbers:
+		if array1[i] < array2[j]:
+			merged_array[k] =  array1[i]
+			i += 1
+		else:
+			merged_array[k] =  array1[j]
+			j += 1
+		k += 1
+	merged_array += array1[i:]
+	merged_array += array1[j:]
+---------------------------------------------------
+BUBBLE SORT:
+12  5  19  11  3  17  2  13  7
+
+5  12  11  3  17  2  13  7  19
+
+5  11  3  12  2  13  7  17
+
+8 + 7 + 6 + 5 ... 1 = No of comparisons
+-------------------
+2  3  5  7  11  12  13  17  19
+
+def bubble_sort(array):
+	for i in range(len(array)-1):
+		for j in range(len(array)-i-1):
+			if array[j] > array[j+1]:
+				array[j], array[j+1] = array[j+1], array[j]
+		
+def optimized_bubble_sort(array):
+	for i in range(len(array)-1):
+		sorted = True
+		for j in range(len(array)-i-1):
+			if array[j] > array[j+1]:
+				array[j], array[j+1] = array[j+1], array[j]
+				sorted = False
+		if sorted:
+			return
+

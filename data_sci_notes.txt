@@ -451,4 +451,39 @@ def optimized_bubble_sort(array):
 				sorted = False
 		if sorted:
 			return
+------------------------------------------------------
+DAY5 21-02-2025 FRIDAY
+
+TREE:
+> A Tree is a acyclic DS
+> A Tree has one entry point called as ROOT
+> The data is stored in NODES in a tree.
+> The nodes are stored in such a way that, one related to the orther in Parent-Child relationship
+> IF you descend a tree, the immediately reachable node(s) are said to be the Child node(s)
+> The current node thus becomes the Parent node.
+> Reaching a child node and then to its child and so on is said to be TRAVERSING.
+> Thus reaching any node in a Tree has UNIQUE PATH.
+> The Root of the Tree is said to be at a lavel 1.
+> The child node(s) of the Root is said to be at a level 2 and so on.
+> The highest possible level is said to be the DEPTH or HEIGHT of the Tree.
+> And this also is the longest possible PATH in the Tree.
+> If every node in the Tree has a maximum of 2 child nodes, then it is said to be BINARY TREE.
+> The 2 child nodes of the parent node can be termed as LEFT CHILD NODE and RIGHT CHILD NODE.
+> From the Left child the tree that can be traversed along with the left child itself, is said to be LEFT SUB TREE and on similar lines we have RIGHT SUB TREE.
+> For a given depth/height of say N, we can have at most 2(N)-1 nodes in a Binary Tree.
+> If in a binary, every node has exactly 0 or 2 child nodes then such a tree is called as STRICTLY BINARY TREE.
+> If a Binary tree has exactly 2(N)-1 nodes in it, then it is said to be COMPLETE BINARY TREE.
+> If a bibary tree has nearly 2(N)-1 nodes or exactly then is is said to be well balanced and thus the term BALANCED BT.
+> Thus we can derive what can be a imbalanced binary tree.
+> As we traverse a BT, moving to left child or moving to right and so on, we observe that we are isolating the nodes in all other paths.
+> This traversing if done in a disciplened pattern/fashion, then it is Recursive in nature.
+> Thus, reaching every new node while traversing, we can consider that node itself as Root and it and its descendents make a Binary Tree by itself.
+> If in a BT, the nodes are ARRANGED in such a way that the left child node of any node in the tree has data smaller than the data in itself and the right child node has data greater than or equal to its own data (and this consistent in entire tree) then such a BT is said to be BINARY SEARCH TREE (BST).
+> If in a BST, there are only and only left child nodes (or only right child nodes), and we apply search then the efficiency O(n).
+> However, in a BST of level N, we can have 2(N)-1 nodes. So, a BST with level N having N nodes is the Worst possible BST (or even BT).
+> IF a BST is Complete binary tree or Balanced BST, then a search would yield an efficeincy of O(LogN). Because with every traversal, we make away with exactly(nearly) half of the nodes in the Tree.
+> If we traverse the entire BT in the pattern L-R'-R then it is said to be In-Order traversal.
+> If we traverse the entire BT in the pattern R'-L-R then it is said to be Pre-Order traversal.
+> If we traverse the entire BT in the pattern L-R-R' then it is said to be Post-Order traversal.
+
 

@@ -31,8 +31,52 @@ class Bst:
         else:
             temp2.right = node
 
-    def delete_node(self, root):
-        pass
+    def delete_node(self):
+        data = int(input('Enter data of the node to be delete: '))
+        temp1 = self.root
+        temp2 = None
+        while temp1.data != data:
+            temp2 = temp1
+            if data < temp1.data:
+                temp1 = temp1.left
+            else:
+                temp1 = temp1.right
+        # If node to be deleted is a leaf node:
+        if temp1.left is None and temp1.right is None:
+            print(f'Node with data {temp1.data} deleted')
+            if temp2.left is temp1:
+                temp2.left = None
+            else:
+                temp2.right = None
+        # If node to be deleted has 2 children
+        elif temp1.left is not None and temp1.right is not None:
+            print(f'Node with data {temp1.data} deleted')
+            temp3 = temp1.right.left
+            if temp3 is None:
+                temp1.right.left = temp1.left
+                return
+            while temp3.left is not None:
+                temp3 = temp3.left
+            temp3.left = temp1.left
+            # if root is the node being deleted
+            if temp1 is self.root:
+                self.root = temp1.right
+                return
+            if temp2.left is temp1:
+                temp2.left = temp1.right
+            else:
+                temp2.right = temp1.right
+        # when node to be deleted has exactly one child
+        else: 
+            print(f'Node with data {temp1.data} deleted')
+            #link = return () if temp1.left temp1.left else temp1.right
+            link = temp1.left # assume temp1 has left child
+            if temp1.right:
+                link = temp1.right
+            if temp2.left is temp1:
+                temp2.left = link
+            else:
+                temp2.right = link
 
     def inorder(self, root):
         if root:

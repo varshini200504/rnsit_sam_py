@@ -1,11 +1,11 @@
 import pymysql
 
 class Person:
-    def __init__(self):
-        self.name       = ""
-        self.gender     = ""
-        self.dob        = ""
-        self.location   = ""
+    def __init__(self, name="", gender="", dob="", location=""):
+        self.name       = name
+        self.gender     = gender
+        self.dob        = dob
+        self.location   = location
 
     def __str__(self):
         print(f'Name:{self.name}, Location:{self.location}')
@@ -54,25 +54,13 @@ class Db_operations:
         dob = input('Enter person date of borth(yyyy-mm-dd): ')
         return (name, gender, location, dob)
 
-    def get_latest_row_id(self):
-        query = 'select max(id) from persons;'
-        connection = self.connect_db()
-        cursor = connection.cursor()
-        cursor.execute(query)
-        id = cursor.fetchone()
-        print(id)
-        print(str(id))
-        print(type(id))
-        cursor.close()
-        self.disconnect_db(connection)
-
-    def insert_row(self):
-        person = self.read_person_details()
-        print(person)
+    def insert_row(self, person):
+        #person = self.read_person_details()
         query = 'insert into persons(name, gender, location, dob) values(%s, %s, %s, %s);'
+        person_tuple = (person.name, person.gender, person.location, person.dob)
         connection = self.connect_db()
         cursor = connection.cursor()
-        cursor.execute(query, person)
+        cursor.execute(query, person_tuple)
         connection.commit()
         cursor.close()
         self.disconnect_db(connection)
@@ -105,8 +93,9 @@ class Db_operations:
         cursor.close()
         self.disconnect_db(connection)
 
-    def search_row(self):
-        id = int(input('Enter Id of the person to search: '))
+    def search_row(self, id):
+        row = None
+        #id = int(input('Enter Id of the person to search: '))
         query = f'select * from persons where id = {id}'
         connection = self.connect_db()
         cursor = connection.cursor()
@@ -119,6 +108,7 @@ class Db_operations:
         connection.commit()
         cursor.close()
         self.disconnect_db(connection)
+        return row
 
     def list_all_rows(self):
         query = f'select * from persons;'
@@ -135,3 +125,15 @@ class Db_operations:
         cursor.close()
         self.disconnect_db(connection)
 
+    def get_latest_row_id(self):
+        query = 'select max(id) from persons;'
+        connection = self.connect_db()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        id = cursor.fetchone()
+        cursor.close()
+        self.disconnect_db(connection)
+        return id[0]
+
+oprs = Db_operations()
+oprs.get_latest_row_id()

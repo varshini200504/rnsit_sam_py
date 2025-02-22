@@ -485,5 +485,15 @@ TREE:
 > If we traverse the entire BT in the pattern L-R'-R then it is said to be In-Order traversal.
 > If we traverse the entire BT in the pattern R'-L-R then it is said to be Pre-Order traversal.
 > If we traverse the entire BT in the pattern L-R-R' then it is said to be Post-Order traversal.
+> Applying the Inorder traversal on a BST gives us the data in Increasing order.
+> A Node having no Child nodes is said to be LEAF node (brahmachari) node.
+> We always add the new node in a BST as a leaf node.
+> Adding or deleting a node from a BST hampers the balancing of the tree.
+> Deleting a node from a BST can be divided into 3:
+	1. When node to be deleted is the leaf node (node with zero child nodes). In this case, you just have to make the respective link of its parent NULL.
+	2. When the node to be deleted has 1 child then the child node of the node being deleted, will be made the same child as it was to its parent. In other words, the child node of the node being deleted, will replace it.
+	3. When we are deleting a node with 2 child nodes, then the right child of the node being deleted, becomes the right child of its parent (The child node will takes its place) and the left child of the node being deleted along with its sub tree, should be made child of the left most child of the right child.
 
+--------------------------------------------------------
+https://docs.google.com/forms/d/1GCXb1r2epoNm6RdNSz3WqU-LIFICsnRFBuXthjeyPnk/edit
 

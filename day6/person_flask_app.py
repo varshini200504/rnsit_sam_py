@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from person_dao import Person, Db_operations
+import pymysql
 
 persons = Db_operations()
 
